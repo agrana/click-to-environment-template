@@ -1,3 +1,3 @@
-# Export cli options to env variables
+# Export click cli options as environment variables
 
-Expose click cli options as environment variable and run a command.
+So commands can be used same way cli and pipelines
