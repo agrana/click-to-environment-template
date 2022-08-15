@@ -1,6 +1,7 @@
 """
-Pass the click options as Environment variables.
-So a process called by this script can work seamesly in CICD and cli ways.
+Pass click options as Environment variables.
+So the same script called here can be used from ci/cd 
+with variables injected by the pipeline instead of cli parameters.
 """
 
 import click
@@ -44,7 +45,7 @@ def this_command(**kwargs):
     """
 
     def export_all_params():
-        "Export click options and environment variables"
+        "Export click options as environment variables"
         for key, value in kwargs.items():
             os.environ[key.upper()] = value
 
