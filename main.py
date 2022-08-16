@@ -9,9 +9,20 @@ import os
 import subprocess
 
 
-OPTION_1 = "O1"
-OPTION_2 = "02"
+A_DEFAULT_1 = "O1"
+"""
+Sensible default for one
+"""
+
+B_DEFAULT_2 = "02"
+"""
+Sensible default for two
+"""
+
 COMMAND = "env"
+"""
+The command to execute
+"""
 
 
 def print_options(param, ctx, value):
@@ -26,18 +37,18 @@ def print_options(param, ctx, value):
 @click.option(
     "--option_1",
     "-1",
-    default=OPTION_1,
+    default=A_DEFAULT_1,
     callback=print_options,
     show_default=True,
-    help="AWS account",
+    help="A default 1",
 )
 @click.option(
     "--option_2",
     "-2",
-    default=OPTION_2,
+    default=B_DEFAULT_2,
     callback=print_options,
     show_default=True,
-    help="AWS account",
+    help="B default 2",
 )
 def this_command(**kwargs):
     """
